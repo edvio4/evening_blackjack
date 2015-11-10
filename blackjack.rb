@@ -15,14 +15,9 @@ class Hand
         score+=card.to_i
       else
         aces+=1
-        if score <= 10
-          score+=11
-        else
-          score+=1
-        end
+        score <= 10 ? score+=11 : score+=1
       end
-      aces.times do { if score > 21; score-=10 }
-
+      aces.times do { score > 21 ? score-=10 }
     end
     score
   end
